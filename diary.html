@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diary Entries</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="src/js/postentries.js" defer></script>
+  <script type="module" src="src/js/entries.js" defer></script>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+
+    h1, h2 {
+      color: #fff;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input, textarea, button {
+      display: flex;
+      width: 50%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    button {
+      background-color: #555;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+
+    #diary {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+    }
+
+    /* Kortin tyyli */
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+
+    /* Kortin kuva */
+    .card-img img {
+      width: 50px;
+    }
+
+    /* Kortin teksti */
+    .card-diary p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222;
+      padding: 10px 20px;
+      margin-left: 70px;
+      margin-right: 70px;
+    }
+
+    .logo {
+      color: #00BFFF;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin: 0 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 1em;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-container {
+      text-align: center;
+    }
+
+    label {
+      font-size: 18px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    select {
+      width: 200px;
+      padding: 10px;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #222;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    select:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<header>
+  <nav class="navbar">
+    <div class="logo">ElämänElixiiri</div>
+    <div class="dropdown-container">
+      <select id="menu" name="menu" onchange="navigateToPage()">
+        <option value="">Lisää</option>
+        <option value="etusivu.html">Etusivu</option>
+        <option value="diary.html">Päiväkirja</option>
+      </select>
+    </div>
+    <script>
+      function navigateToPage() {
+        let selectedPage = document.getElementById("menu").value;
+        if (selectedPage) {
+          window.location.href = selectedPage;
+        }
+      }
+    </script>
+  </nav>
+</header>
+<body>
+  <h1>My Diary</h1>
+  <form id="diary-form">
+    <label>Date: <input type="date" id="entry_date" required></label>
+    <label>Mood: <input type="text" id="mood" required></label>
+    <label>Weight (kg): <input type="number" id="weight" required></label>
+    <label>Sleep Hours: <input type="number" id="sleep_hours" required></label>
+    <label>Notes: <textarea id="notes" required></textarea></label>
+    <button type="submit">Add Entry</button>
+  </form>
+  <h2>Previous Entries</h2>
+  <div id="diary"></div>
+</body>
+</html>

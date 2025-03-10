@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>ElämänElixiiri</title>
+  <link rel="stylesheet" href="src/css/vk1.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">ElämänElixiiri</div>
+      <div class="dropdown-container">
+        <select id="menu" name="menu" onchange="navigateToPage()">
+          <option value="">Lisää</option>
+          <option value="etusivu.html">Etusivu</option>
+          <option value="diary.html">Päiväkirja</option>
+        </select>
+      </div>
+      <script>
+        function navigateToPage() {
+          let selectedPage = document.getElementById("menu").value;
+          if (selectedPage) {
+            window.location.href = selectedPage;
+          }
+        }
+      </script>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content"></div>
+  </section>
+
+  <!-- Main Section -->
+  <main>
+    <section class="intro">
+      <h1><span class="highlight">ElämänElixiiri,</span> jotta elämä olisi nautinnollisempaa!</h1>
+    </section>
+
+    <section class="story">
+      <div class="story-content">
+        <div class="heart-graphic">
+          <img src="src/img/health.png" alt="Heart Graphic">
+        </div>
+        <div class="text-content">
+          <h2>Yhteystiedot</h2>
+          <h3>Tämä on meidän tarinamme</h3>
+          <p>
+            Olemme joukko nuoria yrittäjiä, jotka uskovat HRV tiedon ja treeniohjelman voimaan hyvinvoinnin seurannassa. 
+          </p>
+          <p>
+            Sykevaihtelua tai HRV:tä käytetään fysiologisiin mittauksiin kuten VO2-maksimaalinen hapenottokyky, SV-stressitesti, Suoritustaso, Anaerobinen kyky ja Harjoituksen tehokkuus. 
+            Yhdistämällä HRV seurannan henkilökohtaiseen treeniohjelmaan, voit saavuttaa nopeasti, tehokkaasti sekä ennen kaikkea turvallisesti uusia tasoja kuntosi kehityksessä.
+          </p>
+          <p>
+            Ohjelmamme tukee kehitystäsi eri treeniohjelmien muodossa, tarjoaa päivittäjän hyvinvointisi seurantaan sekä HRV tietojesi analysointiin. Voit saada kauttamme myös yhteyden terveydenhuollon ammattilaisiin, sekä personal trainer palveluihin.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Copyright, Meitsi</p>
+  </footer>
+</body>
+</html>
